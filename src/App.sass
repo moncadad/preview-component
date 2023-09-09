@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap')
+// ## Layout - Mobile: 375px - Desktop: 1440px
+
+// ## Colors ### Primary
+$bright-orange: hsl(31, 77%, 52%)
+$dark-cyan: hsl(184, 100%, 22%)
+$very-dark-cyan: hsl(179, 100%, 13%)
+
+// ### Neutral
+$transparent-white: hsla(0, 0%, 100%, 0.75) // (paragraphs)
+$very-light-gray: hsl(0, 0%, 95%) //(background, headings, buttons)
+
+// ## Typography
+$font-body: 15px
+// ### Font
+$font-big-shoulders: 'Big Shoulders Display', cursive //400
+$font-lexend-deca: 'Lexend Deca', sans-serif //700
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    background-color: #fff
+    font-family: $font-body
+    color: $transparent-white
+    display: flex
+    // flex-direction: column
+    height: 100vh
+    align-items: center
+    justify-content: center
+.wrapper
+    background: $bright-orange
+    margin: 22px
+    max-width: 920px
+    // border: 1px solid red
+    border-radius: 16px
+    .main
+        display: grid
+        grid-template-columns: 1fr
+
+    .section:nth-child(1)
+        background-color: $bright-orange
+        border-radius: 16px 16px 0 0
+        .btn
+            color: $bright-orange
+    .section:nth-child(2)
+        background-color: $dark-cyan
+        .btn
+            color: $dark-cyan
+    .section:nth-child(3)
+        background-color: $very-dark-cyan
+        border-radius: 0 0 16px 16px
+        .btn
+            color: $very-dark-cyan
+    .section
+        padding: 46px
+        img.icon, h1
+            margin-bottom: 36px
+        h1
+            color: #fff
+            font-family: $font-big-shoulders
+            font-size: 36px
+        p
+            font-family: $font-lexend-deca
+            line-height: 1.6
+            padding-bottom: 25px
+        .btn
+            background-color: #fff
+            font-family: $font-lexend-deca
+            font-size: $font-body
+            outline: none
+            border: 2px solid white
+            border-radius: 38px
+            padding: 16px 36px
+        .btn:hover
+            background-color: transparent
+            color: $transparent-white
+@media (min-width: 400px)
+    .wrapper
+        .main
+            grid-template-columns: 1fr 1fr 1fr
+
+        .section
+            p
+                padding-bottom: 75px
+
+        .section:nth-child(1)
+            border-radius: 16px 0 0 16px
+
+        .section:nth-child(3)
+            border-radius: 0 16px 16px 0
